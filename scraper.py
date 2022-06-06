@@ -1,3 +1,4 @@
+import os
 import requests
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -15,12 +16,12 @@ login = driver.find_element_by_xpath('//*[@id="banner"]/nav/div[2]/div[2]/div/sp
 login.click()
 login2 = driver.find_element_by_xpath('//*[@id="region-main"]/div[2]/div[2]/div/div/div/div/div/a')
 login2.click()
-mail = driver.find_element_by_xpath('//*[@id="i0116"]')
-mail.send_keys('jads00@vse.cz')  
+mail = driver.find_element_by_xpath('//*[@id="i0116"]')  
+mail.send_keys('jads00@vse.cz')
 mail.send_keys(Keys.RETURN) 
 time.sleep(5)
 password = driver.find_element_by_xpath('//*[@id="passwordInput"]')
-password.send_keys('')
+my_secret = os.environ['pass']
 password.send_keys(Keys.RETURN) 
 time.sleep(5)
 kurz = driver.find_element_by_xpath('//*[@id="label_3_5"]/span')
